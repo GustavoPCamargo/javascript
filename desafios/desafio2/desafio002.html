@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(49, 49, 148);
+        text-align: center;
+    }
+    section{
+        background-color: white;
+        padding: 20px;
+        width: max-content;
+        border-radius: 20px;
+        margin: auto;
+        box-shadow: 2px 2px 10px black;
+    }
+</style>
+<body id="body">
+    <h1>Quantos anos vc tem?</h1>
+    <section>
+        <div>
+            <p>
+                Ano de nascimento: 
+                <input type="number" id="txtano" min="1">
+            </p>
+            <p>
+                sexo: 
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="verificar" id="btn">
+            </p>
+        </div>
+        <div id="res">
+            Resultado
+        </div>
+    </section>
+    <script>
+        let btn = document.getElementById('btn')
+        btn.addEventListener("click", function(){
+        let data = new Date()
+        let ano = data.getFullYear()
+        let fano = document.getElementById("txtano")
+        let res = document.getElementById("res")
+        if (fano.value.length == 0 || Number(fano.value) > ano){
+            window.alert("[erro] verifique os dados e tente novamente")
+        } else {
+            let fsex = document.getElementsByName("radsex")
+            let idade = ano - Number(fano.value)
+            let genero = ''
+            if(fsex[0].checked){
+                genero = 'homem'
+            } else {
+                genero = 'mulher'
+            }
+            res.style.textAlign = 'center'
+            res.innerHTML = `Vc é um(a) ${genero} com ${idade} anos`
+        }
+        })
+    </script>
+</body>
+</html>

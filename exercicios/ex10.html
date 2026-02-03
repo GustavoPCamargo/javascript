@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sistema de multas</h1>
+    velocidade do carro: <input type="number" id="vel"> km/h
+    <input type="button" id="btn" value="calcular">
+    <div id="res">RESULTADO</div>
+</body>
+<script>
+    document.getElementById("btn").addEventListener("click", function (){
+        var txtvel = document.querySelector("input#vel")
+        var vel = Number(txtvel.value)
+
+        if (vel >= 60){
+            document.getElementById("res").innerText = 'multado'
+        } else {
+            document.getElementById("res").innerText = 'de boa'
+        }
+    })
+</script>
+</html>

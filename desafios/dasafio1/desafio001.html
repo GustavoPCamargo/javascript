@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(49, 49, 148);
+        text-align: center;
+    }
+    section{
+        background-color: white;
+        padding: 20px;
+        width: min-content;
+        border-radius: 20px;
+        margin: auto;
+        box-shadow: 2px 2px 10px black;
+    }
+    div{
+        margin: 10px;
+    }
+    div#foto{
+        border-radius: 60px;
+    }
+</style>
+<body id="body">
+    <h1>HORA DO DIA</h1>
+    <section>
+        <div id="foto">
+            <img src="noite.jpg" alt="" id="img">
+        </div>
+        <div id="hrs">
+            AGORA SÃO 0 horas
+        </div>
+    </section>
+    <script>
+        let horario
+        let body = document.getElementById("body")
+        let hrst = document.getElementById("hrs")
+        let img = document.getElementById("img")
+        let agora = new Date()
+        let hora = agora.getHours()
+        if (hora >= 6 && hora <= 11){
+            img.src = 'dia.jpg'
+            body.style.background = "yellow"
+            horario = 'manhã'
+        } else if (hora >= 12 && hora <= 18){
+            img.src = 'tarde.jpg'
+            body.style.background = "orange"
+            horario = tarde
+        } else {
+            img.src = 'noite.jpg'
+            body.style.background = "rgb(49, 49, 148)"
+            horario = 'noite'
+        }
+        hrst.innerHTML = `Agora são ${hora} horas da ${horario}`
+    </script>
+</body>
+</html>
