@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(49, 49, 148);
+        text-align: center;
+    }
+    section{
+        background-color: white;
+        padding: 20px;
+        width: max-content;
+        border-radius: 20px;
+        margin: auto;
+        box-shadow: 2px 2px 10px black;
+    }
+</style>
+<body id="body">
+    <h1>Vamos contar</h1>
+    <section>
+        <div>
+            <p>
+                Inicio: 
+                <input type="number" id="ini" min="1">
+            </p>
+            <p>
+                Fim: 
+                <input type="number" id="fim" min="1">
+            </p>
+            <p>
+                Passo: 
+                <input type="number" id="pas" min="1">
+            </p>
+            <p>
+                <input type="button" value="contar" id="btn">
+            </p>
+        </div>
+        <div id="res">
+            Resultado:
+        </div>
+    </section>
+    <script>
+        let ini = document.getElementById('ini')
+        let fim = document.getElementById('fim')
+        let pas = document.getElementById('pas')
+        let btn = document.getElementById('btn')
+
+        btn.addEventListener("click", function(){
+            if(ini.value.length == 0 || fim.value.length == 0 || pas.value.length == 0){
+                window.alert("preencha os bagulhos")
+            } else {
+                
+            }
+        })
+    </script>
+</body>
+</html>

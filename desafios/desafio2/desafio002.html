@@ -45,11 +45,14 @@
     </section>
     <script>
         let btn = document.getElementById('btn')
-        btn.addEventListener("click", function(){
+
+        
         let data = new Date()
         let ano = data.getFullYear()
         let fano = document.getElementById("txtano")
         let res = document.getElementById("res")
+
+        btn.addEventListener("click", function(){
         if (fano.value.length == 0 || Number(fano.value) > ano){
             window.alert("[erro] verifique os dados e tente novamente")
         } else {
